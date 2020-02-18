@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="border-bottom pb-3">
+    <h1>Task List</h1>
+    <% @tasks.each do |task| %>
+    <div class="row row-cols-2">
+      <p><i class="mr-2 <%= task.completed ? 'fa fa-check-square-o' : 'fa fa-square-o' %>"></i><%= link_to task.title, task_path(task.id) %>
+        <%= link_to task_path(task),
+          method: :delete,
+          data: { confirm: "Are you sure?" } do %>
+          <i class="fa fa-trash" aria-hidden="true"></i>
+        <% end %>
+      </p>
+    </div>
+    <% end %>
+  </div>
+  <%= link_to new_path do %>
+    <p><i class="fa fa-plus" aria-hidden="true"></i>Add a new task.</p>
+  <% end %>
+</div>

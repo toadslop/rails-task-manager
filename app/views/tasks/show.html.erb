@@ -1,0 +1,7 @@
+<div class="container">
+  <h3><%= @task.title.capitalize %></h3>
+  <p><%= @task.details %></p>
+  <p><i class="mr-2 <%= @task.completed ? 'fa fa-check-square-o' : 'fa fa-square-o' %>"></i><%= @task.completed ? "This task is already finished" : "This task is not yet completed" %></p>
+  <p><%= link_to "edit", edit_path %></p>
+  <p><%= link_to "back", tasks_path %></p>
+</div>
